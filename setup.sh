@@ -1,14 +1,14 @@
 #!/bin/bash
 
-function configure_vim() {
-	if [ ! -f  "$HOME/.vimrc" ]; then
-		cp vimconf/vimrc $HOME/.vimrc
-	fi
-
+function configure_vim()
+{
 	if [ ! -d "$HOME/.vim" ]; then
 		mkdir -p $HOME/.vim
-		cp vimconf/*.vim $HOME/.vim
 	fi
+
+	# Forced copy
+	cp -rf vimconf/vimrc $HOME/.vimrc
+	cp -rf vimconf/*.vim $HOME/.vim
 }
 
 function main()
