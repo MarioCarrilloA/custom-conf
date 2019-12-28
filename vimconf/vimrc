@@ -1,4 +1,5 @@
-autocmd BufNewFile,BufRead *.sh source ~/.vim/scripts.vim
 autocmd BufNewFile,BufRead *.c source ~/.vim/c.vim
+autocmd BufNewFile,BufRead *.py source ~/.vim/python.vim
+autocmd BufNewFile,BufRead *.sh source ~/.vim/scripts.vim
 filetype on
 syntax on
