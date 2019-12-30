@@ -26,10 +26,19 @@ function configure_vim()
 
 function main()
 {
+	cmds=(
+		"gcc"
+		"git"
+		"tmux"
+		"vim"
+	)
+
 	# check installed tools
-	if ! exists_cmd "git"; then
-		yum -y install git
-	fi
+	for cmd in ${cmds[@]}; do
+		if ! exists_cmd "$cmd"; then
+			sudo yum -y install $cmd
+		fi
+	done
 
 	configure_vim
 }
